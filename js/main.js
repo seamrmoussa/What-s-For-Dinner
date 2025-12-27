@@ -864,6 +864,27 @@ var recipe = [
   },
 ];
 
+var recipeImgSrc = document.getElementById("recipe-img");
+var recipeImgAlt = document.getElementById("recipe-img");
+var ratingAvg = document.getElementById("rating-avg");
+var ratingNum = document.getElementById("rating-num");
+var PrepTime = document.getElementById("Prep-time");
+var cookingTime = document.getElementById("cooking-time");
+var cookingPersonnels = document.getElementById("cooking-personnels");
+var difficultyBadge = document.getElementById("difficulty-level-badge");
+var recipeCountry = document.getElementById("recipe-country");
+var recipeName = document.getElementById("recipe-name");
+var recipeDes = document.getElementById("recipe-des");
+var ingredientsList = document.getElementById("ingredients-list");
+var instructionsList = document.getElementById("instructions-list");
+var chefsList = document.getElementById("chefs-list");
+var caloriesNum = document.getElementById("calories-num");
+var proteinNum = document.getElementById("protein-num");
+var carbohydratesNum = document.getElementById("carbohydrates-num");
+var fatNum = document.getElementById("fat-num");
+var fiberNum = document.getElementById("fiber-num");
+var sodiumNum = document.getElementById("sodium-num");
+
 function changeRecipe() {
   var randomNumber = Math.floor(Math.random() * recipe.length);
 
@@ -911,41 +932,26 @@ function changeRecipe() {
                           </div>`;
   }
 
-  document.getElementById("recipe-img").src = recipe[randomNumber].imgCover;
-  document.getElementById("recipe-img").alt = recipe[randomNumber].name;
-  document.getElementById("rating-avg").innerHTML =
-    recipe[randomNumber].ratingsAverage;
-  document.getElementById(
-    "rating-num"
-  ).innerHTML = `(${recipe[randomNumber].ratingsQuantity} reviews)`;
-  document.getElementById("Prep-time").innerHTML =
-    recipe[randomNumber].prepTime;
-  document.getElementById("cooking-time").innerHTML =
-    recipe[randomNumber].cookTime;
-  document.getElementById("cooking-personnels").innerHTML =
-    recipe[randomNumber].servings;
-  document.getElementById("difficulty-level-badge").innerHTML =
-    recipe[randomNumber].difficulty;
-  document.getElementById("recipe-country").innerHTML =
-    recipe[randomNumber].category;
-  document.getElementById("recipe-name").innerHTML = recipe[randomNumber].name;
-  document.getElementById("recipe-des").innerHTML =
-    recipe[randomNumber].description;
-  document.getElementById("ingredients-list").innerHTML = ingredientsNewList;
-  document.getElementById("instructions-list").innerHTML = instructionsNewList;
-  document.getElementById("chefs-list").innerHTML = chefsNewList;
-  document.getElementById("calories-num").innerHTML =
-    recipe[randomNumber].nutrition.calories;
-  document.getElementById("protein-num").innerHTML =
-    recipe[randomNumber].nutrition.protein;
-  document.getElementById("carbohydrates-num").innerHTML =
-    recipe[randomNumber].nutrition.carbs;
-  document.getElementById("fat-num").innerHTML =
-    recipe[randomNumber].nutrition.fat;
-  document.getElementById("fiber-num").innerHTML =
-    recipe[randomNumber].nutrition.fiber;
-  document.getElementById("sodium-num").innerHTML =
-    recipe[randomNumber].nutrition.sodium;
+  recipeImgSrc.src = recipe[randomNumber].imgCover;
+  recipeImgAlt.alt = recipe[randomNumber].name;
+  ratingAvg.innerHTML = recipe[randomNumber].ratingsAverage;
+  ratingNum.innerHTML = `(${recipe[randomNumber].ratingsQuantity} reviews)`;
+  PrepTime.innerHTML = recipe[randomNumber].prepTime;
+  cookingTime.innerHTML = recipe[randomNumber].cookTime;
+  cookingPersonnels.innerHTML = recipe[randomNumber].servings;
+  difficultyBadge.innerHTML = recipe[randomNumber].difficulty;
+  recipeCountry.innerHTML = recipe[randomNumber].category;
+  recipeName.innerHTML = recipe[randomNumber].name;
+  recipeDes.innerHTML = recipe[randomNumber].description;
+  ingredientsList.innerHTML = ingredientsNewList;
+  instructionsList.innerHTML = instructionsNewList;
+  chefsList.innerHTML = chefsNewList;
+  caloriesNum.innerHTML = recipe[randomNumber].nutrition.calories;
+  proteinNum.innerHTML = recipe[randomNumber].nutrition.protein;
+  carbohydratesNum.innerHTML = recipe[randomNumber].nutrition.carbs;
+  fatNum.innerHTML = recipe[randomNumber].nutrition.fat;
+  fiberNum.innerHTML = recipe[randomNumber].nutrition.fiber;
+  sodiumNum.innerHTML = recipe[randomNumber].nutrition.sodium;
 }
 
 changeRecipe();
